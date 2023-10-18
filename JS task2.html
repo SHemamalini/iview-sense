@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let massMark = 78;
+        let heightMark = 1.69;
+        let massJohn = 92;
+        let heightJohn = 1.95;
+        let BMIMark = massMark / (heightMark * heightMark);
+        let BMIJohn = massJohn / (heightJohn*heightJohn);
+        console.log(BMIMark);
+        console.log(BMIJohn);
+        console.log(BMIMark>BMIJohn);
+        let ifElse = BMIMark>BMIJohn;
+        if (ifElse)
+        {
+            let ifTrue = `Mark's BMI ${BMIMark} is heigher than John's ${BMIJohn}!`;
+            console.log(ifTrue);
+        }
+    </script>
+</body>
+</html>
