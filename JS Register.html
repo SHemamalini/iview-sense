@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(96, 96, 160);
+            color: rgb(24, 25, 26);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+            border: 2px solid rgb(36, 31, 29);
+            width: 560px;
+            height: 520px;
+            margin-left: 340px;
+            text-align: center;
+            justify-content: center;
+            background-image: linear-gradient(to right,rgb(216, 100, 207), rgb(19, 115, 212), rgb(45, 150, 127));
+            border-radius: 40px;
+            font-family: sans-serif;
+        }
+        h1 {
+            color: rgb(212, 249, 28);
+        }
+        #name{
+            width: 250px;
+            border-radius: 10px;
+        }
+        #email{
+            width: 250px;
+            border-radius: 10px;
+        }
+        #password{
+            width: 250px;
+            border-radius: 10px;
+        }
+        #confirmpassword{
+            width: 250px;
+            border-radius: 10px
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>REGISTER</h1>
+        <h3>User Name</h3>
+        <input type="text" id="name">
+        <p id="nmessage"></p>
+        <h3>Email</h3>
+        <input type="text" id="email">
+        <p id="emessage"></p>
+        <h3>Password</h3>
+        <input type="password" id="password">
+        <p id="pmessage"></p>
+        <h3>Confirm Password</h3>
+        <input type="password" id="confirmpassword">
+        <p id="cpmessage"></p><br/><br/>
+        <button onclick="validateRegistration()">Register</button>
+    </div>
+    <script>
+        function validateRegistration() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const confirmpassword = document.getElementById("confirmpassword").value;
+
+            const nmessage = document.getElementById("nmessage");
+            const emessage = document.getElementById("emessage");
+            const pmessage = document.getElementById("pmessage");
+            const cpmessage = document.getElementById("cpmessage");
+
+            nmessage.innerHTML = "";
+            emessage.innerHTML = "";
+            pmessage.innerHTML = "";
+            cpmessage.innerHTML = "";
+
+            if (name === "") {
+                nmessage.innerHTML = "Fill name";
+            }
+            if (email === "") {
+                emessage.innerHTML = "Enter mail Id";
+            }
+            if (password === "") {
+                pmessage.innerHTML = "Enter password";
+            } else if (password.length < 8) {
+                pmessage.innerHTML = "Password must contain at least 8 characters.";
+            }
+            if (confirmpassword === "") {
+                cpmessage.innerHTML = "Enter Confirm Password";
+            } else if (password !== confirmpassword) {
+                cpmessage.innerHTML = "Passwords don't match";
+            }
+        }
+    </script>
+</body>
+</html>
