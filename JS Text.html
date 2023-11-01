@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(134, 132, 199);
+            color: rgb(24, 25, 26);
+        }
+        .container {
+            margin-top: 100px;
+            border: 2px solid rgb(194, 123, 97);
+            width: 400px;
+            height: 300px;
+            margin-left: 400px;
+            text-align: center; /* Updated from justify-content */
+            background-image: linear-gradient(to right, rgb(70, 19, 212), rgb(45, 150, 127));
+            border-radius: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Enter Text to Counter</h1>
+        <textarea placeholder="Type your text here.." id="text" oninput="calculate()" cols="30"></textarea>
+        <h2>Character Count: <span id="count">0</span></h2>
+    </div>
+    <script>
+        function calculate() {
+            const text = document.getElementById("text");
+            const count = document.getElementById("count");
+            count.textContent = text.value.length;
+        }
+    </script>
+</body>
+</html>
