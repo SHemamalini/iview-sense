@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(134, 132, 199);
+            color: rgb(26, 23, 23);
+        }
+        .container {
+            margin-top: 70px;
+            border: 2px solid rgb(194, 123, 97);
+            width: 400px;
+            height: 450px;
+            margin-left: 400px;
+            text-align: center;
+            justify-content: center;
+            background-image: linear-gradient( to right,rgb(70, 19, 212),rgb(45, 150, 127));
+            border-radius: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FD Calculator</h1>
+        <h2>Principal Amount in (&#8377;)</h2>
+        <input type="text" id="principal">
+        <h2>Interest Rate in (%)</h2>
+        <input type="text" id="interestRate">
+        <h2>Time in (months)</h2>
+        <input type="text" id="months"><br/><br/>
+        <button onclick="calculate()">Calculate</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function calculate() {
+            const principal = parseFloat(document.getElementById("principal").value);
+            const interestRate = parseFloat(document.getElementById("interestRate").value);
+            const months = parseFloat(document.getElementById("months").value);
+            
+            const rate = interestRate / 100 / 12;
+            const t = months;
+            const rdAmount = principal * t * (t + 1) / 2 * rate + principal;
+            let rdAmountRounded = Math.trunc(rdAmount);
+            document.getElementById("result").textContent = "Your FD is " + rdAmountRounded;
+        }
+    </script>
+</body>
+</html>
