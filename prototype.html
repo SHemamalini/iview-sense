@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function Employee(name, age, gender, id)
+     { 
+         this.name = name; 
+         this.age = age; 
+         this.gender = gender; 
+         this.id = id; 
+        }; 
+        function Developer(name, age, gender, id, specialization)
+         { 
+             Employee.call(this, name, age, gender, id);  
+             this.specialization = specialization; 
+            } 
+            console.log(Employee.prototype); 
+            console.log(Developer.prototype);
+    </script>
+</body>
+</html>
