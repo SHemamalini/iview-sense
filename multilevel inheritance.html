@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multilevel inheritance</title>
+</head>
+<body>
+   <script>
+       function CustomShape(id) {
+        this.id = id;
+     }
+     CustomShape.prototype.name = 'Shape';
+     CustomShape.prototype.toString = function() {
+        return this.name;
+     };
+     function SquareShape(id, name, side) {
+        CustomShape.apply(this, [id]);
+        this.name = name;
+        this.side = side;
+     }
+     SquareShape.prototype = new CustomShape();
+     SquareShape.prototype.name = 'Square';
+     function CircleShape(id, name, rad) {
+        CustomShape.apply(this, [id]);
+        this.name = name;
+        this.rad = rad;
+     }
+     CircleShape.prototype = new CustomShape();
+     CircleShape.prototype.name = 'Circle';
+   </script>
+</body>
+</html>
